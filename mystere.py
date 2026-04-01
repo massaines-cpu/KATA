@@ -5,12 +5,12 @@ from random import *
 choix_mystere = choice(range(0, 123, 1))
 print(choix_mystere)
 
-#Il demande à l'utilisateur de le deviner.
-
-#L'utilisateur choisit un nombre.
-#Le programme compare le nombre avec le nombre mystère
 while not False:
+    # Il demande à l'utilisateur de le deviner.
+    # L'utilisateur choisit un nombre.
     texte = int(input('devine mon nombre:'))
+    # Le programme compare le nombre avec le nombre mystère
+
     if texte == choix_mystere:
         print('bravo')
         break

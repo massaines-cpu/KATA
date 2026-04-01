@@ -1,0 +1,1 @@
+#Faire un programme en python qui trouve le nombre mystère en jouant le moins de coups possible.
