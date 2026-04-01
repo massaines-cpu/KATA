@@ -3,7 +3,6 @@ from random import *
 #Le programme choisi un nombre au hasard entre 0 et 123, le nombre mystère.
 
 choix_mystere = choice(range(0, 123, 1))
-print(choix_mystere)
 
 while not False:
     # Il demande à l'utilisateur de le deviner.
