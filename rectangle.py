@@ -3,6 +3,8 @@
 x = int(input('entrez un nombre X:'))
 y = int(input('entrez un nombre Y:'))
 
-for _ in range(y):
+for i in range(y):
     print('#'* x)
+
+
 
