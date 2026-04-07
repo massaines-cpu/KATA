@@ -4,8 +4,8 @@ class Animal:
         self.nom = nom
         self.cri = None
 
-    def parle(self, cri):
-        return self.nom + self.cri
+    def parle(self):
+        return self.nom + " " + self.cri
 
 class chat(Animal):
     def __init__(self, age, nom):
@@ -21,13 +21,17 @@ class dog(Animal):
         self.cri = "waf waf wouf"
 
 class chaiench(dog, chat):
+    def __init__(self, age, nom):
+        super().__init__(age, nom)
+        self.cri = "waf miaou wouf"
+
 
 
 cici = chat(12, 'cici') #cherche dans class chat, puis on envoie via 'super' dans class animal les infos
 bernard = dog(2, 'bernard')
 zaurus = chaiench(5, 'zaurus')
 #mixine
-print(cici.parle(), cici.ronronner())
+print(cici.parle())
 # print(cici.parle())
 # print(bernard.parle(), bernard.age)
 #
