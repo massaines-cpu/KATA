@@ -42,20 +42,14 @@ color_data = [{
 
 # Afficher les couleurs de la durée la plus courte à la durée la plus longue. (On a le droit d’utiliser pandas…)
 from datetime import datetime
-import pandas as pd
-c = color_data
 
-tableau = pd.DataFrame(c)
-for index, row in tableau.iterrows():
-    start = datetime.strptime(row['time_start'], '%H:%M:%S')
-    end = datetime.strptime(row['time_end'], '%H:%M:%S')
+def calcul_duree(dictionnaire):
+    start = datetime.strptime(dictionnaire['time_start'], '%H:%M:%S')
+    end = datetime.strptime(dictionnaire['time_end'], '%H:%M:%S')
     calcul = end - start
-    mini = min(calcul)
-    print(mini)
+    return calcul
 
+color_data.sort(key=calcul_duree)
 
+print(color_data)
 
-# total_score = 0
-# for index, row in df.iterrows():
-#     total_score += row['Points']
-# print(f"La somme totale des points est : {total_score}")
