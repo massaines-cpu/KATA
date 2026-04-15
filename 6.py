@@ -1,6 +1,5 @@
 import random, string
 from random import randint
-from string import ascii_lowercase
 
 
 #Faire un tableau f qui contient 676 str.
