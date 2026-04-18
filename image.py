@@ -1,13 +1,14 @@
 # bibliotheque qui gère les images
 
 from PIL import Image, ImageColor
-# mon image
-#                                largeur hauteur  couleur du fond
-img = Image.new('RGB', (1200, 1200), color = "#ffffff")
-# afficher l'image
+img = Image.new('RGB', (1200, 1200), color = "#F0622B")
+# img.show()
+
+#changer couleur d'un pixel
+noir = ImageColor.getcolor("#000000", "RGB")
+img.putpixel((128, 128), noir)
 img.show()
 
-rouge = ImageColor.getcolor("#ff0000", "RGB")
-#                  x   y
-img.putpixel((128, 128), rouge)
-img.show()
+def pixel_image(nom, largeur, hauteur):
+    pass
+
