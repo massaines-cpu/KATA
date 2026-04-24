@@ -51,6 +51,44 @@ def calcul_duree(dictionnaire):
 
 color_data.sort(key=calcul_duree)
 
-print(color_data)
+from PIL import Image, ImageColor, ImageDraw
+# img = Image.new('RGB', (1200, 1200), color = "#F0622B")
+# # img.show()
+#
+# #changer couleur d'un pixel
+# noir = ImageColor.getcolor("#000000", "RGB")
+# img.putpixel((128, 128), noir)
+# # img.show()
 
+# def pixel_image():
+#     pass
 
+durees = []
+for duree in color_data:
+    durees.append(calcul_duree(duree))
+
+# for duree in color_data:
+#     print(calcul_duree(duree).seconds // 60)
+
+# img = Image.new('RGB', (1200, 1200), color='#F0622B')
+# for i, color in enumerate(color_data):
+#     duree_minutes = calcul_duree(color).seconds
+#     y = i * 120
+#     zone = [(0, y), (duree_minutes, y + 120)]
+#     img1 = ImageDraw.Draw(img)
+#     img1.rectangle(zone, fill=color['color'])
+# img.show()
+
+img = Image.new('RGB', (500, 500), color='#F0622B')
+img1 = ImageDraw.Draw(img)
+
+for i, color in enumerate(color_data):
+    start = datetime.strptime(color['time_start'], '%H:%M:%S')
+    end = datetime.strptime(color['time_end'], '%H:%M:%S')
+    x1 = (start.hour * 60 + start.minute)// 2
+    x2 = (end.hour * 60 + end.minute) // 2
+    y = i * 50
+    zone = [(x1, y), (x2, y + 50)]
+    img1.rectangle(zone, fill=color['color'])
+
+img.show()
